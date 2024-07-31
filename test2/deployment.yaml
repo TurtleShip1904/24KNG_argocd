@@ -17,4 +17,6 @@ spec:
         image: vxztu2/24kng_webpages:49a0baf7da2d7c4d97751025b4c40b4ea170f728
         ports:
         - containerPort: 8000
-
+        envFrom:
+        - secretRef:
+            name: django-db-secrets
