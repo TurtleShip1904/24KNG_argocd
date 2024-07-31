@@ -47,7 +47,7 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: kaseykim7123@gmail.com
+    email: vxztu2@naver.com
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
