@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: streaming-app
-        image: vxztu2/24kng_webpages:932be89bcff71c72bdb48e49b4af26942dcf217f
+        image: vxztu2/24kng_webpages:0af708f80642c26397c281a3be64a169baf41791
         ports:
         - containerPort: 8000
         envFrom:
