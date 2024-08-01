@@ -14,9 +14,30 @@ spec:
     spec:
       containers:
       - name: streaming-app
-        image: vxztu2/24kng_webpages:84acab876e9a42513d5250701539d49984a4411f
+        image: vxztu2/24kng_webpages:latest
         ports:
         - containerPort: 8000
         envFrom:
         - secretRef:
             name: django-db-secrets
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 10
+      imagePullSecrets:
+      - name: dockerhub-secret
